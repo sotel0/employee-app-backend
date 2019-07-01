@@ -33,11 +33,11 @@ npm start;
 3. The minimum required information to store is the employee's ID and fullname
 
 #### Notes/Hints
-1. `/scripts/docker-compose.yml`:
+1. `./scripts/docker-compose.yml`:
 This defines your stack. Observe the port mappings.
 Elasticsearch will be available on localhost:9201 instead of its standard port of 9200 and
 MySQL will be listening on localhost:3336 instead of its standard port 3306
-2. `/scripts/docker-entrypoint-initdb.d/mysql/0_schema.sql`:
+2. `./scripts/docker-entrypoint-initdb.d/mysql/0_schema.sql`:
 This SQL file is here to help you define a table ahead of time. The script will be mounted inside
 the container on its initialization. In order to change the schema using only this file, you
 will need to run `npm run stack:down && npm run stack:up` for SQL file changes to be registered.
