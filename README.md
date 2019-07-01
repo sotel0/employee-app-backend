@@ -9,9 +9,9 @@ Create an API using the serverless framework CLI.
 - Delete a single employee via DELETE request to /employees/{id}
 - Retrieve a collection of employees via GET request to /employees
 2. Use Elasticsearch to serve an accurate cache of the mysql table for the GET /employees collection endpoint
-3. Demonstrate API by forking this project into your own repository
 4. Once complete, either push a fork of this project to your own repository and link it to us or zip up the git project and deliver it to us
 electronically
+5. Demonstrate API with interviewers
 
 #### Prerequisites & Setup
 1. Install Docker onto your machine
