@@ -8,8 +8,8 @@ fi;
 if [[ -z "$AWS_PROFILE" ]]; then
   PROFILE=dev
 fi;
-
-node --inspect=127.0.0.1:9229 node_modules/.bin/serverless offline start \
+# node --inspect=127.0.0.1:9229 node_modules/.bin/serverless offline start \
+node --inspect=127.0.0.1:9229 node_modules/serverless/bin/serverless.js offline start \
 -t -c --webpack-no-watch \
 --stage ${PROFILE} \
 --skipCacheInvalidation \
