@@ -5,7 +5,7 @@ export default async function (event: APIGatewayEvent): Promise<any> {
   return {
     status: 200,
     body: JSON.stringify({
-      message: "hello worldzzzz",
+      message: "hello world",
     }),
   };
 }

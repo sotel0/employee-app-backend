@@ -9,18 +9,49 @@ provider:
   name: local
   runtime: nodejs8.10
   stage: ${opt:stage, 'dev'}
-  # Environment variables for all functions in this service
   environment:
     NODE_ENV: ${opt:nodeEnv, self:provider.stage}
     # Add environment variables here such as mysql connection information, elasticsearch connection information, etc.
 
 functions:
+  employeeDelete:
+    handler: handler.employeeDelete
+    name: employeeDelete
+    events:
+      - http:
+          path: helloz
+          method: delete
+
+  employeePatch:
+    handler: handler.employeePatch
+    name: employeePatch
+    events:
+      - http:
+          path: employee
+          method: patch
+
+  employeePost:
+    handler: handler.employeePost
+    name: employeePost
+    events:
+      - http:
+          path: employee
+          method: post
+
+  employeeTableGet:
+    handler: handler.employeeTableGet
+    name: employeeTableGet
+    events:
+      - http:
+          path: employeeTable
+          method: get
+
   helloGet:
     handler: handler.helloGet # Hint: Observe the way the exports work in each of the {folder}/index.ts files
     name: helloGet
     events:
-    - http:
-        path: hello
-        method: get
+      - http:
+          path: hello
+          method: get
     environment:
       # You can use function specific environment variables here (not required)

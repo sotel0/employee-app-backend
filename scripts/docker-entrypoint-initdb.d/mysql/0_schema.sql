@@ -1,1 +1,12 @@
--- #Add your initial schema here....
+-- CREATE DATABASE employees;
+-- CREATE TABLE employees (
+--     user_id int NOT NULL AUTO_INCREMENT,
+--     first_name TEXT,
+--     last_name TEXT,
+--     email TEXT,
+--     phone TEXT,
+--     address TEXT,
+--     city TEXT,
+--     state TEXT,
+--     zip_code TEXT,
+-- );
