@@ -19,7 +19,7 @@ functions:
     name: employeeDelete
     events:
       - http:
-          path: helloz
+          path: employee/id
           method: delete
 
   employeePatch:
@@ -27,7 +27,7 @@ functions:
     name: employeePatch
     events:
       - http:
-          path: employee
+          path: employee/id
           method: patch
 
   employeePost:
@@ -38,20 +38,10 @@ functions:
           path: employee
           method: post
 
-  employeeTableGet:
-    handler: handler.employeeTableGet
-    name: employeeTableGet
+  employeeGet:
+    handler: handler.employeeGet
+    name: employeeGet
     events:
       - http:
-          path: employeeTable
+          path: employee
           method: get
-
-  helloGet:
-    handler: handler.helloGet # Hint: Observe the way the exports work in each of the {folder}/index.ts files
-    name: helloGet
-    events:
-      - http:
-          path: hello
-          method: get
-    environment:
-      # You can use function specific environment variables here (not required)
