@@ -24,25 +24,19 @@ export default async function (event: APIGatewayEvent): Promise<any> {
       port: "3336",
     },
   };
-  let employeeTable : Employee[] = [];
   const knex = require('knex')(options);
 
-  knex.select('*').from("employees")
-      // .then((rows : string[]) => {
-          
-      //   })
-      .then((rows : Employee[]) => {
-        for (let row of rows) {
+  return knex.select('*').from("employees")
 
-            // let cat : Employee = row;
-            // `${row['first_name']} ${row['address']} 
-            // ${row['last_name']} ${row['city']}
-            // ${row['email']} ${row['state']}
-            // ${row['phone']} ${row['zip_code']}
-            // ${row['status']}`;
-            employeeTable.push(row);
-            console.log(JSON.stringify( employeeTable));
-          }
+      .then((rows : Employee[]) => {
+    
+           return {
+            status: 200,
+            headers: {
+            "Content-Type": "application/json"
+            },
+            body: JSON.stringify(rows),
+            };
         })
       .catch((err: Error) => { console.log(err); throw err })
       .finally(() => {
@@ -50,14 +44,14 @@ export default async function (event: APIGatewayEvent): Promise<any> {
         
       });
 
-      return {
-        status: 200,
-          headers: {
-          "Content-Type": "application/json"
-          },
-          body: JSON.stringify( employeeTable),
-        };
-        
+      // return {
+      //   status: 200,
+      //   headers: {
+      //   "Content-Type": "application/json"
+      //   },
+      //   body: JSON.stringify( employeeTable),
+      //   };
+
     // console.log("employee table", employeeTable);
 
 }

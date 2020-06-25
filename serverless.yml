@@ -19,7 +19,7 @@ functions:
     name: employeeDelete
     events:
       - http:
-          path: employee/id
+          path: employee/{id}
           method: delete
 
   employeePatch:
@@ -27,7 +27,7 @@ functions:
     name: employeePatch
     events:
       - http:
-          path: employee/id
+          path: employee/{id}
           method: patch
 
   employeePost:

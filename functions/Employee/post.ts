@@ -18,7 +18,6 @@ export default async function (event: APIGatewayEvent): Promise<any> {
   const knex = require("knex")(options);
   knex("employees")
     .insert(body)
-    .then(() => console.log("data inserted in employee db"))
     .catch((err: Error) => {
       console.log(err);
       throw err;
